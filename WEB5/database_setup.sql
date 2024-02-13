@@ -33,7 +33,34 @@ CREATE TABLE grades (
 );
 
 -- insert_data.sql
--- Використовуйте пакет Faker або аналогічний для генерації випадкових даних.
+-- Insert data for students
+INSERT INTO students (student_name, group_id) VALUES
+    (Faker()::name, 1),
+    (Faker()::name, 2);
+    -- Add more students...
+
+-- Insert data for groups
+INSERT INTO groups (group_name) VALUES
+    (Faker()::word),
+    (Faker()::word);
+    -- Add more groups...
+
+-- Insert data for teachers
+INSERT INTO teachers (teacher_name) VALUES
+    (Faker()::name),
+    (Faker()::name);
+    -- Add more teachers...
+
+-- Insert data for subjects
+INSERT INTO subjects (subject_name, teacher_id) VALUES
+    (Faker()::word, 1),
+    (Faker()::word, 2);
+    -- Add more subjects...
+
+-- Insert data for grades
+INSERT INTO grades (student_id, subject_id, grade) VALUES
+    (1, 1, Faker()::number_between(50, 100)),
+    (2, 1, Faker()::number_between(50, 100));
 
 -- Вставка даних для студентів
 INSERT INTO students (student_name, group_id) VALUES
